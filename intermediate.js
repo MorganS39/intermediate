@@ -27,4 +27,20 @@ function destroyer(arr) {
 }
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
+// Wherefore art thou
+function whatIsInAName(collection, source) {
+  var arr = Object.keys(source);
+  return collection.filter(function(obj) {
+    return arr
+      .map(function(key) {
+        return obj.hasOwnProperty(key) && obj[key] === source[key];
+      })
+      .reduce(function(a, b) {
+        return a && b;
+      });
+  });
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
 //
