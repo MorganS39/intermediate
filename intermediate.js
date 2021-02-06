@@ -275,4 +275,16 @@ truthCheck
 {"user": "Po", "sex": "female"}], 
 "sex");
 
+// Arguments optional
+function addTogether(a, b) {
+  if (typeof a !== "number") {
+    return undefined;
+  }
+  const sum = b =>
+    typeof b === "number" ? a + b : undefined;
+  return typeof b === "undefined" ? b => sum(b) : sum(b);
+}
+
+addTogether(2,3);
+
 //
