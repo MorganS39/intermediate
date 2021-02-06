@@ -166,3 +166,20 @@ function convertHTML(str) {
 convertHTML("Dolce & Gabbana");
 
 // Sum all odd fibonacci numbers
+function sumFibs(num) {
+  var prevNumber = 0;
+  var currNumber = 1;
+  var result = 0;
+  while (currNumber <= num) {
+    if (currNumber % 2 !== 0) {
+      result += currNumber;
+    }
+    currNumber += prevNumber;
+    prevNumber = currNumber - prevNumber;
+  }
+  return result;
+}
+
+sumFibs(4);
+
+// Sum all primes
