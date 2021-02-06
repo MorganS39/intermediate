@@ -202,3 +202,32 @@ function sumPrimes(num) {
 sumPrimes(10);
 
 // smallest common multiple
+function smallestCommons(arr) {
+  arr.sort(function(a, b) {
+    return b - a;
+  });
+
+  var newArray = [];
+  for (var i = arr[0]; i >= arr[1]; i--) {
+    newArray.push(i);
+  }
+  var quot = 0;
+  var loop = 1;
+  var n;
+
+  do {
+    quot = newArray[0] * loop * newArray[1];
+    for (n = 2; n < newArray.length; n++) {
+      if (quot % newArray[n] !== 0) {
+        break;
+      }
+    }
+    loop++;
+  } while (n !== newArray.length);
+  return quot;
+}
+
+
+smallestCommons([1,5]);
+
+// 
