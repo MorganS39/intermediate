@@ -241,3 +241,11 @@ function dropElements(arr, func) {
 dropElements([1, 2, 3], function(n) {return n < 3; });
 
 // Steamroller
+function steamrollArray(arr) {
+  let flatten = [].concat(...arr);
+  return flatten.some(Array.isArray) ? steamrollArray(flatten) : flatten;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+//
