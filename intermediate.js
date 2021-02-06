@@ -53,4 +53,20 @@ function spinalCase(str) {
 
 spinalCase('This Is Spinal Tap');
 
-//
+// Pig Latin
+function translatePigLatin(str) {
+  if (str.match(/^[aeiou]/))
+  return str + "way";
+  
+  const constants = str.match(/^[^aeiou]+/)[0];
+  return str.substring(constants.length) + constants + "ay";
+  //pseudo code
+  /*when you find a vowel stop
+  add "way" to end of word
+  if you find a consonant store that letter until you find a vowel
+  add those consonants to the end of word + "ay"*/
+}
+
+translatePigLatin("consonant");
+
+// 
