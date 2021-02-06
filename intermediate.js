@@ -82,4 +82,31 @@ function myReplace(str, before, after) {
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
+// DNA pairing
+function pairElement(str) {
+  var pairs = [];
+  
+  var swap = function(char) {
+    switch (char) {
+      case "A":
+        pairs.push(["A", "T"]);
+        break;
+      case "T":
+        pairs.push(["T", "A"]);
+        break;
+      case "C":
+        pairs.push(["C", "G"]);
+        break;
+      case "G":
+        pairs.push(["G", "C"]);
+        break; 
+    }
+  };
+  for (var i = 0; i < str.length; i++) {
+    swap(str[i]);
+  }
+  return pairs;
+}
+pairElement("GCG");
+
 //
